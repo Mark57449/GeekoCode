@@ -1,0 +1,35 @@
+{
+  "name": "geeko",
+  "version": "1.0.0",
+  "description": "A primeira e oficial versão do tema para Wordpress da Geeko!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark57449/GeekoCode.git"
+  },
+  "keywords": [
+    "Geeko",
+    "Blog",
+    "Wiki",
+    "Loja",
+    "Geek"
+  ],
+  "author": "Wendel Henrique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mark57449/GeekoCode/issues"
+  },
+  "homepage": "https://github.com/Mark57449/GeekoCode#readme",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "gulp-sass": "^4.0.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
