@@ -1,0 +1,200 @@
+
+a:link {
+	text-decoration: none;
+}
+
+.GO_badge {
+	font-size: 15px;
+	border-radius: 20px;
+	font-weight: 420;
+	font-family: 'Roboto', Arial;	
+}
+
+.GO_author img {
+	border-radius: 100px !important;
+}
+
+.GO_author span {
+	font-weight: bold;
+}
+
+#GO_Konteyner {
+	background: #f2f2f2;
+	border-left: 10px solid #f2f2f2;
+	border-right: 10px solid #f2f2f2;
+}
+
+#GO_PostDestacado article {
+	min-height: 400px;
+	background: #00000030;
+}
+
+#GO_PostDestacado h3 {
+	font-size: 21px;
+	font-family: 'Roboto', Arial;
+	text-shadow: 0px 0px 3px #00000075;
+	letter-spacing: 0.7px;
+}
+
+#GO_PostDestacado .badge {
+	font-size: 15px;
+}
+
+#GO_PostDestacado .ImagemDestacada {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	filter: brightness(70%);
+	z-index: 18;
+}
+
+/*#GO_PostDestacado a:hover .ImagemDestacada {
+	filter: brightness(90%);
+}*/
+
+#GO_PostDestacado .info_area {
+	position: absolute;
+	width: 60%;
+	bottom: 10px;
+}
+
+#GO_PostDestacado .data {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	z-index: 19;
+}
+
+#GO_PostDestacado .data p {
+	opacity: 0.7;
+	letter-spacing: 0.5px;
+}
+
+
+#GO_ExtraCabecalho h6 {
+	font-size: 13px;
+	color: white;
+	opacity: 0.9;
+}
+
+.footer_widget img {
+	filter:;
+}
+
+#GO_NavigationMenu h4 span {
+	border-color: #343a4099 !important;
+	border-width: 3px !important;
+}
+
+#GO_NavigationMenu ul li:first-of-type a {
+	color: #e44444 !important;
+	font-weight: bold !important;
+}
+
+#GO_NavigationMenu ul li a {
+	font-weight: 450;
+	color: #343a40;
+	font-size: 18px;
+	opacity: 0.75;
+}
+
+#GO_NavigationMenu ul li a:hover {
+	opacity: 1;
+}
+
+#GO_BlogPost span a {
+	color: #FFF;
+}
+
+#GO_BlogPost span li {
+	list-style-type: none !important;
+}
+
+#GO_BlogPost span ul.post-categories {
+	margin: 0 !important;
+	padding: 5px !important;
+}
+
+#GO_BlogPost .conteudo {
+	height: 260px;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+  	background-size: cover !important;
+  	background-color: #ff4355 !important;
+  	box-shadow: inset -1px -6px 20px 20px #00000042;
+}
+
+#GO_BlogPost .conteudo h3 {
+	font-family: 'Roboto', Arial;
+	text-shadow: 0px 0px 4px #00000075;
+}
+
+
+#GO_BlogPost .info_area {
+	position: absolute;
+	width: 88%;
+	bottom: 17px;
+}
+
+#GO_Cabecalho {
+	background-position: center center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-color: #CCC !important;
+}
+
+#GO_Cabecalho #GO_MenuCabecalho {
+	position: relative;
+}
+
+#GO_Cabecalho #GO_MenuCabecalho ul li a {
+	color: white;
+}
+
+#GO_MenuCabecalho .loginNav li {
+	opacity: 0.8;
+}
+
+#GO_MenuCabecalho .loginNav li:hover {
+	opacity: 1;
+}
+
+.footer_widget {
+	font-family: 'Roboto', Arial;
+}
+
+.footer_widget ul li a {
+	display: flex !important;
+	text-decoration: none;
+	color: #FFF;
+	width: 70%;
+	opacity: 0.8;
+	justify-content: space-between !important;
+}
+
+.footer_widget ul li a:hover {
+	opacity: 1;
+}
+
+
+.footer_widget ul {
+	list-style-type: none !important;
+	padding: 0 !important;
+}
+
+.footer_widget ul li {
+	margin: 10px 0;
+}
+
+.footer_widget h5 {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+footer .logoFooter {
+	opacity: 0.7;
+}
+
+footer .texto {
+	font-family: 'Roboto', Arial;
+}
