@@ -14,10 +14,5 @@
 		</div>
 	</footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="<?php bloginfo('template_url'); ?>/source/js/jquery.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/source/js/popper.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/source/js/bootstrap.js"></script>
   </body>
 </html>
