@@ -13,33 +13,16 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
     <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans|Nunito+Sans" rel="stylesheet">
     
-    <?php wp_head(); ?>
+    <?php //wp_head(); ?>
   </head>
   <body>
 
-    <?php get_header(); ?>
     
-    <div id="GO_Konteyner" class="container pb-4">
-
-      <nav id="GO_NavigationMenu" class="mb-2 pt-2 row justify-content-between d-none">
-            <h4 class="font-weight-bolder text-dark"><span class="border-bottom pb-2">Sobre o que</span> deseja ler?</h4>
-          
-            <ul class="nav">
-                          <?php
-                wp_nav_menu( array(
-                  'theme_location'    => 'PostNavigation',
-                  'depth'             => 2,
-                  'container'         => false,
-                  'menu_class'        => 'nav',
-                  'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                  'walker'            => new WP_Bootstrap_Navwalker(),
-                ) );
-                ?>
-                <!-- <i class="fas fa-comment-alt"></i> -->
-            </ul>
-          </nav>
+    
+    <div id="GO_Konteyner" class="container-fluid pb-4 px-4">
+      
 
       <?php
         // Args
@@ -108,10 +91,31 @@
         <?php endwhile; endif; wp_reset_query(); ?>
       </section>
 
-      <section id="GO_PostMenu" class="py-2">
+      <section id="GO_PostMenu" class="pt-0">
       <div class="row">
-        <div class="col-12">
-          <div class="row">
+        <?php get_sidebar(); ?>
+        <div class="col-md-12 col-sm-12 col-lg-9 pl-3">
+          <nav id="GO_NavigationMenu" class="mb-2 pt-2 px-3 row justify-content-between">
+            <h4 class="font-weight-bolder text-dark"><span class="border-bottom pb-2">Sobre o que</span> deseja ler?</h4>
+            
+            <ul class="nav">
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'PostNavigation',
+                    'depth'             => 2,
+                    'container'         => false,
+                    'menu_class'        => 'nav',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker(),
+                  ) );
+                ?>
+            </ul>
+                  <?php //Adiciona um formulário de buscas
+                      //dynamic_sidebar('Busca');
+                  ?>
+          </nav>
+          <section id="GO_BoxBlogPost">
+
             
             <?php
             $primeira_consulta = new WP_Query( 
@@ -122,20 +126,19 @@
 
             $nao_repetir = array();
 
-            if($primeira_consulta->have_posts()) : while($primeira_consulta->have_posts()) : $primeira_consulta->the_post(); 
+            if(have_posts()) : while(have_posts()) : the_post(); 
                 get_template_part('content', get_post_format());
                 // Preenche o array -->
                 $nao_repetir[] = $post->ID;
              endwhile;
             else : get_404_template(); endif; ?>
             <?php wp_reset_postdata(); ?>
-          </div>
+          </section>
 
         </div>
-        <?php get_sidebar(); ?>
         </div>
       </section>
-      <section class="row d-flex justify-content-center">
+      <section class="row d-flexx justify-content-center d-none">
         <div class="jumbotron m-3">
           <div class="col-8">
             <h1 class="display-4">Redes Sociais</h1>
@@ -150,8 +153,8 @@
         </div>
       </section>
       
-      <section class="row">
-        <div class="col-12">
+      <section class="row d-none">
+        <div class="col-8">
           <div class="row">
             <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
                 <?php if ( in_array($post->ID, $nao_repetir, true)) continue; ?>
@@ -161,10 +164,16 @@
             <?php endwhile; ?>
             <?php else : get_404_template(); endif; ?>
           </div>
-        </div>
-
-        </div>
+          </div>
+        <?php get_sidebar(); ?>
+        
       </section>
     </div>
 
-<?php get_footer(); ?>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="<?php bloginfo('template_url'); ?>/source/js/jquery.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/source/js/popper.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/source/js/bootstrap.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/source/js/masonry.pkgd.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/source/js/script.js"></script>
