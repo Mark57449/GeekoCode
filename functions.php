@@ -7,8 +7,8 @@
 		add_theme_support('custom-header', array(
 			'uplouds' => true,
 			'default-image' => '',
-			'height' => 100,
-			'width' => 350
+			'height' => 80,
+			'width' => 290
 		));
 		//Registro dos menus
 		register_nav_menus( array(
@@ -39,7 +39,7 @@
 
 	//Definir o tamanho do resumo
 	add_filter('excerpt_length', function($length) {
-		return 45;
+		return 40;
 	});
 
 	//Definir o estilo da páginação
@@ -77,13 +77,35 @@
 		array(
 			'name' => 'Footer',
 			'id' => 'footer',
-			'before_widget' => '<div class="col-2 footer_widget text-white">',
+			'before_widget' => '<div class="sidebar_widget px-3 pt-2 mx-2 text-white border-bottom">',
 			'after_widget' => '</div>',
-			'before_title' => '<h5 class="text-white mb-4">',
+			'before_title' => '<h5 class="text-white mt-1">',
 			'after_title' => '</h5>',
 	));
 
 	//Incluir funções de personalização
 	require get_template_directory(). '/source/inc/customizer.php';
+
+	//Conseguir o tempo de leitura
+	function tt_reading_time() {
+	 	$content = get_post_field('post_content');
+	 	$word_count = str_word_count(strip_tags($content));
+	 	$min = floor($word_count / 200); // tempo médio de leitura: 200 palavras
+	 	$tempo = 'Tempo de leitura: ';
+		 if ($min <= 1) {
+		 	$tempo .= '1 minuto';
+		 }
+		 else {
+		 	$tempo .= $min . ' minutos';
+		 }
+		 return $tempo;
+	}
+	/* http://wordpress.stackexchange.com/a/39920/31885 */
+	function tt_reading_time_filter( $content ) {
+	 	$custom_content = '<div id="tt-temp-estim">'.tt_reading_time().'</div>';
+	 	$custom_content .= $content;
+	 	return $custom_content;
+	}
+
 
 ?>
